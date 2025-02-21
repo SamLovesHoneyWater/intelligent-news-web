@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.split_screen_container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-row-start: 2;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .split_screen_container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.title_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.title_container > * {
+  margin-bottom: 30px;
+}
+
+.interactive_block_container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stocks_search_bar_container {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;  /* This is crucial */
+}
+
+@media (min-width: 640px) {
+  .stocks_search_bar_container {
+    width: auto;
+  }
+}
+
+.stocks_search_result_list_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Increased gap between items */
+  width: 90%;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 16px;
+  position: absolute;
+  top: 64px;
+  background-color: var(--background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  min-height: 60px;
+}
+
+/* Add these styles to ensure items don't get compressed */
+.stocks_search_result_list_container > * {
+  flex-shrink: 0; /* Prevents items from shrinking */
+  min-height: 40px; /* Ensures minimum height */
+}
+
+.stock_search_result_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 290px;
+  height: 40px;
+  background-color: var(--background);
+  padding: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  gap: 12px; /* Added horizontal distance between components */
+}
+
+.watchlist_container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.watchlist_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 400px;
+}
