@@ -90,12 +90,12 @@ const PanelPageUnsuspense = () => {
         const widget = document.createElement('div');
         widget.className = 'tradingview-widget-container__widget';
         
-        //const copyright = document.createElement('div');
-        //copyright.className = 'tradingview-widget-copyright';
-        //copyright.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>';
+        const copyright = document.createElement('div');
+        copyright.className = 'tradingview-widget-copyright';
+        copyright.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>';
         
         widgetContainer.appendChild(widget);
-        //widgetContainer.appendChild(copyright);
+        widgetContainer.appendChild(copyright);
         widgetContainer.appendChild(script);
         
         container.appendChild(widgetContainer);
